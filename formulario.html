@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulario de Personas</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #000;
+      color: #fff;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    .container {
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    input[type="text"],
+    select {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      background-color: #333;
+      color: #fff;
+    }
+
+    .button-container {
+      text-align: center;
+    }
+
+    button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      background-color: #4caf50;
+      color: #fff;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .table-container {
+      margin-top: 40px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th,
+    td {
+      padding: 10px;
+      border-bottom: 1px solid #ddd;
+      text-align: left;
+    }
+
+    th {
+      background-color: #555;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Formulario de Personas</h1>
+
+    <div id="form-section">
+      <div class="form-group">
+        <label for="tipo-identificacion">Tipo de identificación:</label>
+        <select id="tipo-identificacion">
+          <option value="cedula">Cédula</option>
+          <option value="pasaporte">Pasaporte</option>
+          <option value="dni">DNI</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="numero-identificacion">Número de identificación:</label>
+        <input type="text" id="numero-identificacion">
+      </div>
+
+      <div class="form-group">
+        <label for="nombres">Nombres:</label>
+        <input type="text" id="nombres">
+      </div>
+
+      <div class="form-group">
+        <label for="apellidos">Apellidos:</label>
+        <input type="text" id="apellidos">
+      </div>
+
+      <div class="form-group">
+        <label for="pais">País:</label>
+        <input type="text" id="pais">
+      </div>
+
+      <div class="form-group">
+        <label for="ciudad">Ciudad:</label>
+        <input type="text" id="ciudad">
+      </div>
+
+      <div class="form-group">
+        <label for="avatar">Avatar:</label>
+        <input type="file" id="avatar">
+      </div>
+
+      <div class="button-container">
+        <button onclick="crearPersona()">Crear Persona</button>
+      </div>
+    </div>
+
+    <div id="consulta-section">
+      <h2>Consulta de Personas</h2>
+
+      <div class="form-group">
+        <label for="consulta-identificacion">Identificación:</label>
+        <input type="text" id="consulta-identificacion">
+      </div>
+
+      <div class="form-group">
+        <label for="consulta-nombres">Nombres:</label>
+        <input type="text" id="consulta-nombres">
+      </div>
+
+      <div class="form-group">
+        <label for="consulta-apellidos">Apellidos:</label>
+        <input type="text" id="consulta-apellidos">
+      </div>
+
+      <div class="button-container">
+        <button onclick="consultarPersonas()">Consultar</button>
+      </div>
+
+      <div id="resultados" class="table-container"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
